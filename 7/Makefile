@@ -1,11 +1,11 @@
 SHELL_NAME ?= /bin/bash
 BUILD_DIR := $(shell pwd)
-TAG_NAME := $(shell basename $(BUILD_DIR))
+TAG_NAME := node-$(shell basename $(BUILD_DIR))-build
 
 .PHONY: build shell
 
 build:
-	docker build -t node-$(TAG_NAME)-build .
+	docker build -t $(TAG_NAME) .
 
 shell:
 	docker run --rm -ti $(TAG_NAME) $(ENV) $(SHELL_NAME)
