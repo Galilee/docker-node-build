@@ -10,5 +10,5 @@ RUN apt-get update --yes \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Global npm module install
-RUN npm --silent install --global gulp-cli grunt-cli yarn \
+RUN npm --silent install --global gulp-cli grunt-cli \
 	&& rm -rf ~/.npm
