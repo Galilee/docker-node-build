@@ -16,7 +16,7 @@ RUN apt-get update --yes \
 	&& rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Global npm module install
-RUN npm --silent install --global gulp-cli grunt-cli \
+RUN npm --silent install --global npm gulp-cli grunt-cli \
 	&& rm -rf ~/.npm
 
 COPY resources/entrypoint.sh /entrypoint.sh
