@@ -20,3 +20,5 @@ fi
 if [ -n "$NPM_CONFIG_CACHE" ]; then
 	npm config set cache "${NPM_CONFIG_CACHE}"
 fi
+
+exec "$@"
