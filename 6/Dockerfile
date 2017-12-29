@@ -13,8 +13,5 @@ RUN apt-get update --yes \
 RUN npm --silent install --global gulp-cli grunt-cli \
 	&& rm -rf ~/.npm
 
-# Fix NPM setuid
-RUN sed -i'' -r 's/^( +, uidSupport = ).+$/\1false/' /usr/local/lib/node_modules/npm/node_modules/uid-number/uid-number.js
-
 COPY resources/entrypoint.sh /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
