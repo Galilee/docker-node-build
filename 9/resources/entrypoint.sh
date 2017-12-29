@@ -3,7 +3,7 @@
 set -e
 
 if [ -n "$NPM_CUSTOM_REGISTRY" ]; then
-	npm config set registry "${CI_NPM_CONFIG_REGISTRY}"
+	npm config set registry "${NPM_CUSTOM_REGISTRY}"
 fi
 
 if [ -n "$NPM_CUSTOM_REGISTRY_USER" -a -n "$NPM_CUSTOM_REGISTRY_PASSWORD" ]; then
