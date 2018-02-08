@@ -2,6 +2,13 @@
 
 set -e
 
+# SSH key
+if [ -n "$SSH_PRIVATE_KEY" ]; then
+	eval $(ssh-agent -s)
+	ssh-add <(echo "$SSH_PRIVATE_KEY") >/dev/null 2>&1
+	unset SSH_PRIVATE_KEY
+fi
+
 if [ -n "$NPM_CUSTOM_REGISTRY" ]; then
 	npm config set registry "${NPM_CUSTOM_REGISTRY}"
 fi
