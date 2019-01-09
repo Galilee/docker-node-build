@@ -23,4 +23,9 @@ if [ -n "$NPM_CONFIG_CACHE" ]; then
 	npm config set cache "${NPM_CONFIG_CACHE}"
 fi
 
+# Fix email
+if [ -n "$NPM_EMAIL" ]; then
+	npm config set email "${NPM_EMAIL}"
+fi
+
 exec "$@"
